@@ -4,7 +4,7 @@ A Claude skill that turns course materials into one interactive, offline study a
 
 [![Study Atlas demo: mind map, study guide, tests with source links](docs/demo.gif)](docs/demo.mp4)
 
-▶ **[Watch the full 67-second demo](docs/demo.mp4)**. It was built from a real 13-week Master's course on carbon markets and sustainable financing.
+▶ **[Watch the full 1-minute demo (with sound)](docs/demo.mp4)**. It was built from a real 13-week Master's course on carbon markets and sustainable financing.
 
 > "Make me a study atlas from the PDFs in this folder."
 > "Make me a study atlas from the PDFs I upload here."
