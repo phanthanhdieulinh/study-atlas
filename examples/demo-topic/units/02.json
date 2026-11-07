@@ -1,0 +1,175 @@
+{
+ "n": 2,
+ "th": "t2",
+ "title": "Annuities and interest rates",
+ "short": "Annuities and rates",
+ "idea": "Most real cash flows are streams, not single sums, and quoted rates hide compounding.",
+ "sections": [
+  {
+   "h": "Annuities",
+   "b": "<p>An <b>annuity</b> pays equal amounts for a fixed term. PV = C × [1 − (1 + r)<sup>−n</sup>] / r. $100 a year for 10 years at 8% is worth <b>$671.01</b>.</p><div data-widget='sort:0'></div>"
+  },
+  {
+   "h": "APR and EAR",
+   "b": "<p>The <b>EAR</b> includes compounding: EAR = (1 + APR/m)<sup>m</sup> − 1. A 12% APR compounded monthly is an EAR of <b>12.68%</b>.</p>"
+  }
+ ],
+ "traps": [
+  "A perpetuity's PV is C / r: no n, because it never ends."
+ ],
+ "map": [
+  [
+   "Annuities",
+   "Equal payments, fixed term",
+   [
+    [
+     "PV of annuity",
+     "C × [1 − (1+r)^−n] / r"
+    ],
+    [
+     "Perpetuity",
+     "C / r"
+    ]
+   ]
+  ],
+  [
+   "Rates",
+   "Quoted vs effective",
+   [
+    [
+     "APR",
+     "Quoted, before compounding"
+    ],
+    [
+     "EAR",
+     "After compounding"
+    ]
+   ]
+  ]
+ ],
+ "cards": [
+  [
+   "PV of a perpetuity?",
+   "C / r"
+  ],
+  [
+   "What is an annuity?",
+   "Equal payments for a fixed number of periods."
+  ],
+  [
+   "EAR formula?",
+   "(1 + APR/m)^m − 1"
+  ],
+  [
+   "Is EAR ever below APR?",
+   "No. With compounding it is at least as large."
+  ],
+  [
+   "12% APR monthly, EAR?",
+   "12.68%"
+  ],
+  [
+   "Example of a perpetuity?",
+   "A fixed dividend paid forever, such as a preferred share."
+  ]
+ ],
+ "mcq": [
+  [
+   "The present value of $100 a year for 10 years at 8% is about:",
+   [
+    "$671",
+    "$1,000",
+    "$463",
+    "$800"
+   ],
+   0,
+   "100 × [1 − 1.08^−10] / 0.08 = 671.01.",
+   ""
+  ],
+  [
+   "A 12% APR compounded monthly has an EAR of about:",
+   [
+    "12.68%",
+    "12.00%",
+    "1.00%",
+    "13.50%"
+   ],
+   0,
+   "(1.01)^12 − 1 = 12.68%.",
+   ""
+  ],
+  [
+   "The PV of a perpetuity paying $50 a year at 5% is:",
+   [
+    "$1,000",
+    "$250",
+    "$2,500",
+    "$500"
+   ],
+   0,
+   "C / r = 50 / 0.05 = 1,000.",
+   ""
+  ],
+  [
+   "Which pays equal amounts forever?",
+   [
+    "Perpetuity",
+    "Annuity",
+    "Zero-coupon bond",
+    "Single sum"
+   ],
+   0,
+   "A perpetuity has no end date.",
+   ""
+  ],
+  [
+   "More frequent compounding at the same APR makes the EAR:",
+   [
+    "Higher",
+    "Lower",
+    "Unchanged",
+    "Negative"
+   ],
+   0,
+   "Interest earns interest more often.",
+   ""
+  ],
+  [
+   "A 30-year mortgage with fixed monthly payments is:",
+   [
+    "An annuity",
+    "A perpetuity",
+    "A single sum",
+    "A growing perpetuity"
+   ],
+   0,
+   "Equal payments for a fixed term.",
+   ""
+  ]
+ ],
+ "hl": [],
+ "num": [
+  [
+   "What is the EAR of a 12% APR compounded monthly?",
+   [
+    "12.68%",
+    "12.00%",
+    "12.36%",
+    "12.55%"
+   ],
+   "(1 + 0.12/12)^12 − 1 = 12.68%.",
+   ""
+  ],
+  [
+   "What is the PV of $100 a year for 10 years at 8%?",
+   [
+    "$671.01",
+    "$1,000.00",
+    "$740.99",
+    "$613.91"
+   ],
+   "100 × [1 − 1.08^−10] / 0.08 = 671.01.",
+   ""
+  ]
+ ]
+}

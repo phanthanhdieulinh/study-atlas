@@ -1,0 +1,194 @@
+{
+ "meta": {
+  "title": "Time Value of Money",
+  "code": "DEMO",
+  "subtitle": "A two-topic demo of the Study Atlas format.",
+  "unitName": "Topic",
+  "mode": "topic",
+  "exam": {
+   "count": 6,
+   "minutes": 10,
+   "desc": "Demo only: a short mixed quiz."
+  },
+  "sourceNote": "Demo built from standard finance formulas, not from any course's materials."
+ },
+ "sources": {},
+ "themes": {
+  "t1": [
+   "Single sums",
+   "T1"
+  ],
+  "t2": [
+   "Streams of cash",
+   "T2"
+  ]
+ },
+ "seq": [
+  {
+   "t": "Finding a present value",
+   "w": 1,
+   "i": [
+    "Identify the future amount",
+    "Choose the discount rate",
+    "Count the periods",
+    "Divide by (1 + r) to the power n"
+   ]
+  }
+ ],
+ "lists": [
+  {
+   "t": "Inputs to a single-sum PV",
+   "w": 1,
+   "i": [
+    [
+     "Future value",
+     "future|fv"
+    ],
+    [
+     "Rate",
+     "rate|r\\b"
+    ],
+    [
+     "Number of periods",
+     "period|year|n\\b"
+    ]
+   ]
+  }
+ ],
+ "pairs": [
+  [
+   "Present value",
+   "Today's worth of a future amount"
+  ],
+  [
+   "Future value",
+   "What money grows to at a given rate"
+  ],
+  [
+   "Discount rate",
+   "Rate used to bring future cash back to today"
+  ],
+  [
+   "Annuity",
+   "Equal payments for a fixed number of periods"
+  ],
+  [
+   "Perpetuity",
+   "Equal payments forever"
+  ],
+  [
+   "APR",
+   "Quoted annual rate before compounding"
+  ],
+  [
+   "EAR",
+   "Annual rate after compounding"
+  ]
+ ],
+ "nums": [
+  [
+   "PV of $1,000 in 10 years at 8%",
+   "$463.19",
+   1
+  ],
+  [
+   "FV of $1,000 after 10 years at 5%",
+   "$1,628.89",
+   1
+  ],
+  [
+   "Rule of 72 at 8%",
+   "About 9 years to double",
+   1
+  ],
+  [
+   "EAR of 12% APR compounded monthly",
+   "12.68%",
+   2
+  ],
+  [
+   "PV of $100 a year for 10 years at 8%",
+   "$671.01",
+   2
+  ]
+ ],
+ "confuse": [
+  [
+   "APR vs EAR",
+   "APR is the quoted rate; EAR includes compounding, so EAR ≥ APR."
+  ]
+ ],
+ "threads": [
+  {
+   "t": "Discount rate",
+   "w": [
+    1,
+    2
+   ],
+   "d": "Discounts a single sum in Topic 1, then every payment of an annuity in Topic 2."
+  }
+ ],
+ "flags": [],
+ "sorts": [
+  {
+   "t": "Annuity or perpetuity?",
+   "w": 2,
+   "cats": [
+    "Annuity",
+    "Perpetuity"
+   ],
+   "items": [
+    [
+     "A 30-year mortgage",
+     0
+    ],
+    [
+     "A preferred share paying a fixed dividend forever",
+     1
+    ],
+    [
+     "A 5-year car loan",
+     0
+    ],
+    [
+     "A UK consol bond with no maturity",
+     1
+    ]
+   ]
+  }
+ ],
+ "trees": [],
+ "calcs": [
+  {
+   "t": "Present value of a single sum",
+   "w": 1,
+   "inputs": [
+    {
+     "id": "fv",
+     "label": "Future value ($)",
+     "type": "number",
+     "value": 1000,
+     "min": 0,
+     "step": 50
+    },
+    {
+     "id": "r",
+     "label": "Rate",
+     "unit": "%",
+     "min": 0,
+     "max": 20,
+     "step": 0.5,
+     "value": 8
+    },
+    {
+     "id": "n",
+     "label": "Years",
+     "min": 1,
+     "max": 40,
+     "value": 10
+    }
+   ],
+   "out": "`PV = $${fmt(fv/Math.pow(1+r/100,n))}`"
+  }
+ ]
+}

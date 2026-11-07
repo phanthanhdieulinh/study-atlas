@@ -1,0 +1,11 @@
+{
+  "name": "study-atlas",
+  "owner": { "name": "Lucy Linh Phan" },
+  "plugins": [
+    {
+      "name": "study-atlas",
+      "source": "./",
+      "description": "Build an interactive offline study app from course materials or a topic name."
+    }
+  ]
+}

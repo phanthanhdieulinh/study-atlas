@@ -1,0 +1,11 @@
+# Never commit course materials or generated atlases: they usually contain copyrighted content.
+*.pdf
+*.pptx
+*.docx
+work/
+WORK/
+extract/
+*.atlas.html
+*Study Atlas.html
+__pycache__/
+.DS_Store

@@ -1,0 +1,175 @@
+{
+ "n": 1,
+ "th": "t1",
+ "title": "Present and future value",
+ "short": "PV and FV",
+ "idea": "Money now is worth more than the same money later, because it can earn a return in the meantime.",
+ "sections": [
+  {
+   "h": "Future value",
+   "b": "<p><b>Future value</b>: FV = PV × (1 + r)<sup>n</sup>. $1,000 at 5% for 10 years grows to <b>$1,628.89</b>.</p>"
+  },
+  {
+   "h": "Present value",
+   "b": "<p><b>Present value</b> reverses it: PV = FV / (1 + r)<sup>n</sup>. $1,000 in 10 years at 8% is worth <b>$463.19</b> today.</p><div data-widget='calc:0'></div><p class='memo'>Memory hook: the <b>Rule of 72</b>. Years to double ≈ 72 / rate in %.</p>"
+  }
+ ],
+ "traps": [
+  "Use the rate per period: a monthly problem needs a monthly rate and months."
+ ],
+ "map": [
+  [
+   "Future value",
+   "Compounding forward",
+   [
+    [
+     "FV formula",
+     "PV × (1+r)^n"
+    ],
+    [
+     "Rule of 72",
+     "Years to double ≈ 72 / r%"
+    ]
+   ]
+  ],
+  [
+   "Present value",
+   "Discounting back",
+   [
+    [
+     "PV formula",
+     "FV / (1+r)^n"
+    ],
+    [
+     "Discount rate",
+     "The return you give up"
+    ]
+   ]
+  ]
+ ],
+ "cards": [
+  [
+   "What does discounting do?",
+   "Turns a future amount into today's value."
+  ],
+  [
+   "Rule of 72?",
+   "Years to double ≈ 72 divided by the % rate."
+  ],
+  [
+   "FV formula?",
+   "FV = PV × (1 + r)^n"
+  ],
+  [
+   "PV formula?",
+   "PV = FV / (1 + r)^n"
+  ],
+  [
+   "Why is money now worth more?",
+   "It can earn a return meanwhile."
+  ],
+  [
+   "Higher rate, lower or higher PV?",
+   "Lower PV."
+  ]
+ ],
+ "mcq": [
+  [
+   "$1,000 received in 10 years, discounted at 8%, is worth today about:",
+   [
+    "$463",
+    "$500",
+    "$926",
+    "$2,159"
+   ],
+   0,
+   "1,000 / 1.08^10 = 463.19.",
+   ""
+  ],
+  [
+   "If the discount rate rises, the present value of a fixed future payment:",
+   [
+    "Falls",
+    "Rises",
+    "Stays the same",
+    "Doubles"
+   ],
+   0,
+   "A bigger denominator gives a smaller PV.",
+   ""
+  ],
+  [
+   "At 6% a year, money doubles in roughly:",
+   [
+    "12 years",
+    "6 years",
+    "8 years",
+    "18 years"
+   ],
+   0,
+   "Rule of 72: 72 / 6 = 12.",
+   ""
+  ],
+  [
+   "$1,000 at 5% for 10 years grows to about:",
+   [
+    "$1,629",
+    "$1,500",
+    "$1,050",
+    "$2,000"
+   ],
+   0,
+   "1,000 × 1.05^10 = 1,628.89.",
+   ""
+  ],
+  [
+   "Which formula gives the future value of a single sum?",
+   [
+    "PV × (1 + r)^n",
+    "PV / (1 + r)^n",
+    "C / r",
+    "PV × r × n"
+   ],
+   0,
+   "Compounding forward multiplies by the growth factor (1 + r)^n.",
+   ""
+  ],
+  [
+   "FV / (1 + r)^n calculates:",
+   [
+    "Present value",
+    "Future value",
+    "An annuity payment",
+    "The EAR"
+   ],
+   0,
+   "Dividing by the growth factor discounts back to today.",
+   ""
+  ]
+ ],
+ "hl": [],
+ "num": [
+  [
+   "What is $1,000 in 10 years worth today at 8%?",
+   [
+    "$463.19",
+    "$500.00",
+    "$680.58",
+    "$925.93"
+   ],
+   "1,000 / 1.08^10 = 463.19.",
+   ""
+  ],
+  [
+   "Using the Rule of 72, how long does money take to double at 8%?",
+   [
+    "About 9 years",
+    "About 8 years",
+    "About 12 years",
+    "About 7 years"
+   ],
+   "72 / 8 = 9.",
+   ""
+  ]
+ ]
+}
