@@ -1,6 +1,6 @@
 {
   "name": "study-atlas",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Turn lecture slides, PDFs, notes or just a topic name into one offline interactive study app: mind map, study guide, flashcards, mock exam, highlighted-text and numbers-only tests, drills and a cheat sheet, with every answer linked to its source page.",
   "author": { "name": "Lucy Linh Phan" },
   "homepage": "https://github.com/phanthanhdieulinh/study-atlas",

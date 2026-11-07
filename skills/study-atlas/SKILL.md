@@ -7,6 +7,8 @@ description: Build a complete, interactive, offline study app for a course or to
 
 Build a single self-contained HTML study app from course materials, or from a topic name when there are no materials. The app shell, styling and build steps are already written. Your job is the content: read everything, understand it, and write accurate study material and questions into JSON files. The scripts check those files and assemble the app.
 
+This skill works the same in Claude (Claude Code, claude.ai) and in OpenAI Codex (CLI, IDE, ChatGPT). Where the tools differ, the step says so.
+
 The bar is set by what a strong student would make for themselves the week before an exam. That means complete coverage, the course's own wording, every number, every emphasised term, and the places where the slides are wrong flagged honestly.
 
 ## 0. Work out the input
@@ -14,7 +16,7 @@ The bar is set by what a strong student would make for themselves the week befor
 | What the user gives | Where the files are | Mode |
 |---|---|---|
 | A folder path ("from the PDFs in this folder") | That folder | `materials` |
-| Uploaded or attached files ("from the PDFs I upload here") | The paths the conversation shows for the attachments. On claude.ai they are usually in `/mnt/user-data/uploads/`; look there if no path is shown. | `materials` |
+| Uploaded or attached files ("from the PDFs I upload here") | The paths the conversation shows for the attachments. On claude.ai they are usually in `/mnt/user-data/uploads/`. Elsewhere, look in the working directory. If you can't find them, ask once for the folder. | `materials` |
 | Only a course or topic name ("for Corporate Finance") | None | `topic` (see `references/topic-mode.md`) |
 
 If they give both files and a topic name, use the files and treat the name as the title.
@@ -30,7 +32,11 @@ pip install pymupdf            # PDFs; add python-pptx / python-docx if those fo
 python <skill>/scripts/extract.py WORK/extract <files-or-folder> --render
 ```
 
-`WORK` is a scratch folder. `<skill>` is this skill's folder. The extractor writes the following, one set per unit:
+`WORK` is a scratch folder. `<skill>` is the folder this SKILL.md is in, for example `~/.claude/skills/study-atlas` or `~/.agents/skills/study-atlas`.
+
+If `pip install` fails because the sandbox has no network (Codex's default sandbox doesn't), ask the user to approve network access or to run `pip install pymupdf` themselves, then carry on.
+
+The extractor writes the following, one set per unit:
 - `uNN.txt`: page text.
 - `uNN_emph.json`: what the source emphasises (bold, colour, highlights).
 - `uNN_nums.json`: lines that contain a number.
@@ -43,6 +49,8 @@ Read `manifest.json`. Check that the unit numbering matches the course order. De
 
 - Read every `uNN.txt` in full.
 - Look at every PNG in `img/`, which covers every page in each unit's `figure_pages`. Charts, timelines, diagrams and screenshots often hold the numbers and frameworks that exams test, and the text layer misses them. This is the step people skip. Don't skip it.
+  - In Claude, read each PNG with the file-reading tool. In Codex, open each one with the image-viewing tool.
+  - If your environment can't show you images, say so in the hand-over, because figure-only facts will be missing.
 
 ## 2. Plan the course (course.json)
 
@@ -70,7 +78,7 @@ Follow `references/writing-guide.md`. It has the coverage targets, question rule
 - `hl` covers every meaningful emphasised term in `uNN_emph.json`. `num` covers every meaningful number in `uNN_nums.json` and on the image pages. Skip page numbers, copyright lines and citation years.
 - When slides contradict each other or are wrong, say so in the explanation and add an entry to `flags` in course.json.
 
-**Parallelise when you can.** If you have a subagent or Task tool and there are more than 3 units, split the units into 2–4 contiguous ranges. Give each range to a subagent using the brief in `references/subagent-brief.md`, so each one writes only its own `units/NN.json` files. Write course.json yourself, and review a sample of each subagent's output before building. Without subagents, write the units one at a time.
+**Parallelise when you can.** If you can start subagents and there are more than 3 units, split the units into 2–4 contiguous ranges. In Claude Code that's the Agent/Task tool; in Codex, subagents if your setup has them enabled. Give each range to a subagent using the brief in `references/subagent-brief.md`, so each one writes only its own `units/NN.json` files. Write course.json yourself, and review a sample of each subagent's output before building. Without subagents, write the units one at a time, and run the validator after each one so mistakes don't pile up.
 
 ## 4. Cross-unit material (back in course.json)
 
@@ -104,7 +112,9 @@ Fix every ERROR. "PASSED with N warnings" still needs a read: fix the warnings t
 - **Uploaded files** (e.g. claude.ai): save to the outputs folder (`/mnt/user-data/outputs/` on claude.ai), set `sources` to the original file names, and tell the user to put the HTML in the same folder as their copies of the files.
 - **Topic mode:** there are no sources; leave `sources` empty.
 
-If you have a browser tool, open the file and check each tab:
+If you have a browser tool, open the file and check each tab. Without one, the validator plus a successful build is the minimum bar.
+
+With a browser:
 - The map renders.
 - A guide page shows its widgets.
 - A practice question shows its source link.

@@ -1,0 +1,8 @@
+# Optional Codex / ChatGPT metadata. Claude ignores this file.
+interface:
+  display_name: "Study Atlas"
+  short_description: "Turn slides, PDFs or a topic into an offline study app with mind map, flashcards and mock exams"
+  brand_color: "#0B6B5E"
+  default_prompt: "Make me a study atlas from the PDFs in this folder."
+policy:
+  allow_implicit_invocation: true

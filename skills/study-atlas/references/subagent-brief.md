@@ -1,6 +1,6 @@
 # Brief for parallel unit writers
 
-Give each subagent one contiguous range of units. Fill in the `{…}` parts and paste this whole brief. Subagents start with no context, so the brief has to stand on its own.
+Give each subagent one contiguous range of units. This works the same for Claude Code subagents and Codex subagents. Fill in the `{…}` parts and paste this whole brief. Subagents start with no context, so the brief has to stand on its own.
 
 ---
 
